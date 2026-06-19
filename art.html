@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Art Work | Santhosh Kumar G</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--cyan:#00f7ff;--blue:#0066ff;--pink:#ff2bd6;--purple:#8a2bff;--yellow:#ffd447}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,sans-serif;color:#fff;min-height:100vh;overflow-x:hidden;background:#01020d}
+body:before{content:"";position:fixed;inset:0;z-index:-5;background:radial-gradient(circle at 10% 15%,rgba(0,247,255,.28),transparent 18%),radial-gradient(circle at 85% 20%,rgba(255,43,214,.25),transparent 19%),radial-gradient(circle at 50% 90%,rgba(138,43,255,.32),transparent 22%),linear-gradient(135deg,#020414 0%,#050019 45%,#12002a 100%)}
+body:after{content:"";position:fixed;inset:0;z-index:-4;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(var(--cyan) 1px,transparent 1px),radial-gradient(var(--pink) 1px,transparent 1px);background-size:80px 80px,130px 130px,190px 190px;background-position:0 0,40px 70px,100px 30px;opacity:.45;animation:stars 25s linear infinite}
+@keyframes stars{to{background-position:400px 300px,240px 470px,500px 330px}}
+.aurora{position:fixed;inset:-20%;z-index:-3;background:conic-gradient(from 180deg at 50% 50%,transparent,#00f7ff22,#ff2bd633,#8a2bff33,transparent);filter:blur(65px);animation:aurora 14s ease-in-out infinite alternate}
+@keyframes aurora{to{transform:rotate(18deg) scale(1.12)}}
+.shooting-star{position:fixed;width:130px;height:2px;background:linear-gradient(90deg,transparent,#fff,var(--cyan));z-index:-1;filter:drop-shadow(0 0 8px var(--cyan));animation:shoot 5s linear infinite}
+.s1{top:80px;left:-200px}.s2{top:300px;left:-260px;animation-delay:2s}.s3{top:570px;left:-300px;animation-delay:3.8s}
+@keyframes shoot{0%{transform:translateX(0) translateY(0) rotate(-20deg);opacity:0}10%{opacity:1}100%{transform:translateX(150vw) translateY(520px) rotate(-20deg);opacity:0}}
+.planet{position:fixed;border-radius:50%;z-index:-2;background:radial-gradient(circle at 30% 28%,#8dffff,#6539ff 42%,#210050 78%);box-shadow:0 0 35px #6a2bff,inset -18px -18px 30px #0008;animation:float 7s ease-in-out infinite}
+.p1{width:70px;height:70px;left:-22px;bottom:120px}.p2{width:105px;height:105px;right:-35px;bottom:240px;animation-delay:1s}.p3{width:32px;height:32px;left:25px;top:345px;animation-delay:2s}.p4{width:45px;height:45px;right:65px;top:105px;animation-delay:3s}
+@keyframes float{50%{transform:translateY(-28px) rotate(12deg)}}
+.page{width:min(1220px,94%);margin:auto;padding:35px 0 22px}
+.navbar{width:min(950px,94%);height:72px;margin:0 auto 32px;border-radius:34px;display:flex;align-items:center;justify-content:space-between;padding:0 25px;background:linear-gradient(180deg,rgba(10,18,60,.78),rgba(2,4,22,.75));border:1px solid rgba(0,247,255,.7);box-shadow:0 0 18px #00f7ff66,0 0 38px #8a2bff88,inset 0 0 25px #005eff44;backdrop-filter:blur(18px);position:relative;overflow:hidden}
+.navbar:before{content:"";position:absolute;inset:-2px;background:linear-gradient(90deg,transparent,var(--cyan),var(--pink),transparent);opacity:.5;animation:borderMove 4s linear infinite}
+.navbar>*{position:relative;z-index:2}
+@keyframes borderMove{to{transform:translateX(70%)}}
+.logo{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:30px;background:radial-gradient(circle,#161cff,#ff2bd6);box-shadow:0 0 25px var(--pink);animation:pulse 2.5s infinite}
+@keyframes pulse{50%{transform:scale(1.08);box-shadow:0 0 32px var(--cyan)}}
+.navlinks{display:flex;gap:52px;align-items:center}
+.navlinks a{color:#fff;text-decoration:none;font-weight:900;font-size:15px;text-shadow:0 0 10px #fff;position:relative}
+.navlinks a:after{content:"";position:absolute;left:50%;right:50%;bottom:-18px;height:4px;background:linear-gradient(90deg,var(--cyan),var(--pink));border-radius:20px;box-shadow:0 0 15px var(--cyan);transition:.35s}
+.navlinks a:hover:after,.navlinks a.active:after{left:-25px;right:-25px}
+.menu{width:44px;height:44px;border-radius:50%;border:1px solid var(--cyan);display:grid;place-items:center;color:var(--cyan);font-size:22px;box-shadow:0 0 18px var(--cyan),inset 0 0 12px #00f7ff33}
+.hero{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:20px;align-items:stretch}
+.card,.main-card,.art-card,.gallery-box,.contact{background:linear-gradient(145deg,rgba(8,16,55,.8),rgba(2,5,24,.68));border:1.5px solid rgba(255,43,214,.75);box-shadow:0 0 18px rgba(0,247,255,.28),inset 0 0 28px rgba(138,43,255,.18);backdrop-filter:blur(18px);position:relative;overflow:hidden;transition:.45s ease;transform-style:preserve-3d}
+.card{border-radius:22px;padding:28px 26px;min-height:255px}
+.main-card{border-radius:24px;padding:38px 30px;text-align:center;min-height:532px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.card:hover,.art-card:hover,.gallery-box:hover,.main-card:hover{transform:perspective(1000px) rotateX(4deg) rotateY(-4deg) translateY(-8px);box-shadow:0 0 30px #00f7ff88,0 0 55px #ff2bd655,inset 0 0 35px #8a2bff44}
+.card:before,.main-card:before,.art-card:before,.gallery-box:before,.contact:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 20%,rgba(255,43,214,.2),transparent 36%),radial-gradient(circle at 10% 90%,rgba(0,247,255,.18),transparent 36%);pointer-events:none}
+.tag{display:inline-block;color:#8fffff;font-size:12px;font-weight:900;letter-spacing:1px;border:1px solid rgba(0,247,255,.55);padding:8px 16px;border-radius:999px;background:rgba(0,247,255,.08);box-shadow:0 0 12px #00f7ff55;margin-bottom:14px}
+h1{font-family:Orbitron,sans-serif;font-size:56px;line-height:1.05;font-weight:900;letter-spacing:2px;background:linear-gradient(90deg,#fff,var(--cyan),var(--pink),var(--yellow));-webkit-background-clip:text;color:transparent;text-shadow:0 0 35px #00f7ff55}
+.main-card h2{font-size:18px;color:var(--yellow);margin:12px 0;text-shadow:0 0 12px #ffd44788}
+.main-card p,.card p,.art-card p,.gallery-box p,.contact p{color:#e7eaff;font-size:14px;line-height:1.65;position:relative;z-index:2}
+.card h2{font-size:19px;color:#55f7ff;margin-bottom:18px;font-weight:900;position:relative;z-index:2;text-shadow:0 0 12px #00f7ff88}
+.card h2 span{font-size:28px;margin-right:10px}
+.icon-big{font-size:105px;filter:drop-shadow(0 0 22px var(--pink));animation:floatIcon 4s ease-in-out infinite;margin-top:10px}
+@keyframes floatIcon{50%{transform:translateY(-12px) rotate(6deg)}}
+.art-orb{width:230px;height:230px;border-radius:50%;padding:8px;margin:0 auto 18px;background:conic-gradient(var(--cyan),#345bff,var(--pink),var(--yellow),var(--cyan));box-shadow:0 0 28px var(--cyan),0 0 32px var(--pink);position:relative;display:grid;place-items:center;font-size:95px}
+.art-orb:before{content:"";position:absolute;inset:-25px;border-radius:50%;border:2px solid rgba(0,247,255,.45);border-top-color:var(--pink);border-bottom-color:var(--yellow);animation:orbit 12s linear infinite}
+.art-orb span{position:relative;z-index:2;filter:drop-shadow(0 0 20px var(--yellow))}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.btns{display:flex;gap:18px;margin-top:25px;flex-wrap:wrap;justify-content:center}
+.btn{color:#fff;text-decoration:none;font-weight:900;padding:13px 28px;border-radius:13px;border:1px solid var(--pink);background:linear-gradient(120deg,var(--cyan),var(--blue),var(--pink),var(--yellow));background-size:300%;box-shadow:0 0 18px var(--cyan),0 0 24px #ff2bd666;animation:btnGlow 5s linear infinite;transition:.3s}
+.btn:hover{transform:translateY(-4px) scale(1.04)}
+.btn.outline{background:rgba(2,8,35,.6);box-shadow:0 0 15px var(--pink)}
+@keyframes btnGlow{to{background-position:300%}}
+.section{margin-top:22px}
+.section-title{text-align:center;margin-bottom:18px}
+.section-title h2{font-family:Orbitron,sans-serif;font-size:34px;color:var(--cyan);text-shadow:0 0 18px #00f7ff88}
+.art-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.art-card{border-radius:18px;padding:22px 16px;text-align:center;min-height:215px;border-color:#00d9ff}
+.art-card:nth-child(even){border-color:#ff2bd6}
+.art-card i{font-size:45px;color:var(--cyan);filter:drop-shadow(0 0 12px var(--cyan));margin-bottom:14px}
+.art-card:nth-child(2) i,.art-card:nth-child(6) i{color:var(--yellow);filter:drop-shadow(0 0 12px var(--yellow))}
+.art-card:nth-child(5) i,.art-card:nth-child(8) i{color:var(--pink);filter:drop-shadow(0 0 12px var(--pink))}
+.art-card h3{font-size:16px;margin-bottom:10px;color:#55eaff;font-weight:900}
+.art-card a{display:inline-block;margin-top:13px;text-decoration:none;color:#62efff;font-size:11px;font-weight:900;border:1px solid var(--cyan);padding:7px 22px;border-radius:20px;box-shadow:0 0 10px #00f7ff55}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:18px}
+.gallery-box{border-radius:20px;min-height:240px;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(145deg,rgba(8,16,55,.8),rgba(2,5,24,.68)),radial-gradient(circle at 50% 30%,rgba(0,247,255,.25),transparent 35%)}
+.placeholder{height:145px;border-radius:18px;border:1px dashed rgba(0,247,255,.65);display:grid;place-items:center;margin-bottom:16px;background:rgba(0,247,255,.06);font-size:40px;filter:drop-shadow(0 0 12px var(--cyan))}
+.gallery-box h3{color:var(--yellow);font-size:18px;margin-bottom:8px}
+.contact{margin-top:22px;padding:24px;border-radius:22px;text-align:center;border-color:#ff28c9;box-shadow:0 0 30px rgba(255,0,204,.52),inset 0 0 28px rgba(0,247,255,.14)}
+.contact h2{color:#4df2ff;font-size:24px;font-weight:900;text-shadow:0 0 13px var(--cyan)}
+.contact-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.contact-box{border:1px solid rgba(0,185,255,.75);border-radius:14px;min-height:76px;display:flex;align-items:center;gap:12px;padding:13px;background:rgba(4,18,55,.75);text-align:left;box-shadow:inset 0 0 18px rgba(0,174,255,.14),0 0 12px #00f7ff22;text-decoration:none;color:#fff}
+.contact-box i{font-size:28px;color:var(--cyan)}
+.footer{text-align:center;padding:18px 0 0;color:#ddd;font-size:13px}
+.footer b{color:#1ebaff;font-size:18px;text-shadow:0 0 10px #00f7ff88}
+.cursor-glow{position:fixed;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(0,247,255,.13),transparent 65%);pointer-events:none;z-index:-1;transform:translate(-50%,-50%)}
+@media(max-width:1050px){.hero{grid-template-columns:1fr}.art-grid{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:1fr 1fr}.contact-row{grid-template-columns:1fr 1fr}.navlinks{gap:20px}}
+@media(max-width:600px){.page{width:94%;padding-top:20px}.navbar{height:auto;padding:16px;gap:15px}.navlinks{display:none}h1{font-size:36px}.main-card{min-height:auto}.art-orb{width:190px;height:190px}.btns{gap:12px}.art-grid,.gallery,.contact-row{grid-template-columns:1fr}.card{min-height:auto}}
+</style>
+</head>
+<body>
+
+<div class="aurora"></div>
+<div class="shooting-star s1"></div>
+<div class="shooting-star s2"></div>
+<div class="shooting-star s3"></div>
+<div class="planet p1"></div>
+<div class="planet p2"></div>
+<div class="planet p3"></div>
+<div class="planet p4"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<div class="page">
+
+<nav class="navbar">
+<div class="logo">🚀</div>
+<div class="navlinks">
+<a href="home.html">HOME</a>
+<a href="work.html">WORKS</a>
+<a href="studio.html">STUDIO</a>
+<a class="active" href="art.html">ART WORK</a>
+<a href="contact.html">CONTACT</a>
+</div>
+<div class="menu"><i class="fa-solid fa-bars"></i></div>
+</nav>
+
+<section class="hero">
+
+<div class="card">
+<span class="tag">ART STYLE</span>
+<h2><span>✏️</span>PENCIL & DIGITAL ART</h2>
+<p>Creative pencil sketches, portrait drawings, concept art, poster layouts and digital artwork collection.</p>
+<div class="icon-big">🎨</div>
+</div>
+
+<div class="main-card">
+<div class="art-orb"><span>✏️</span></div>
+<span class="tag">MY ART UNIVERSE</span>
+<h1>ART WORK</h1>
+<h2>Pencil Art • Poster Art • Logo Art • Digital Design</h2>
+<p>This page showcases my creative art direction, sketching skills, poster ideas, logo concepts and digital visual designs.</p>
+<div class="btns">
+<a class="btn" href="#gallery">VIEW GALLERY</a>
+<a class="btn outline" href="#contact">ORDER ART</a>
+</div>
+</div>
+
+<div class="card">
+<span class="tag">CREATIVE VISION</span>
+<h2><span>🌌</span>ART TO CINEMA</h2>
+<p>Every artwork starts as a small idea and becomes a cinematic visual, character concept, poster or brand design.</p>
+<div class="icon-big">🖼️</div>
+</div>
+
+</section>
+
+<section class="section">
+<div class="section-title">
+<span class="tag">ART CATEGORIES</span>
+<h2>WHAT I CREATE</h2>
+</div>
+
+<div class="art-grid">
+<div class="art-card"><i class="fa-solid fa-pencil"></i><h3>PENCIL PORTRAIT</h3><p>Realistic pencil portraits, face drawings and handmade sketch artworks.</p><a href="#gallery">VIEW</a></div>
+<div class="art-card"><i class="fa-solid fa-user-astronaut"></i><h3>CHARACTER ART</h3><p>Animation character ideas, fantasy concepts and movie-style character designs.</p><a href="#gallery">VIEW</a></div>
+<div class="art-card"><i class="fa-solid fa-image"></i><h3>POSTER ART</h3><p>Movie posters, event posters, thumbnails and social media poster designs.</p><a href="#gallery">VIEW</a></div>
+<div class="art-card"><i class="fa-solid fa-crown"></i><h3>LOGO ART</h3><p>Logo sketches, brand symbols, studio identity and creative logo concepts.</p><a href="#gallery">VIEW</a></div>
+<div class="art-card"><i class="fa-solid fa-palette"></i><h3>DIGITAL DESIGN</h3><p>Creative digital designs, color concepts, UI visuals and futuristic designs.</p><a href="#gallery">VIEW</a></div>
+<div class="art-card"><i class="fa-solid fa-film"></i><h3>MOVIE CONCEPT</h3><p>Story visuals, scene concept, trailer frames and production idea sketches.</p><a href="#gallery">VIEW</a></div>
+<div class="art-card"><i class="fa-solid fa-wand-magic-sparkles"></i><h3>AI ART</h3><p>AI-generated concepts, reference visuals and creative image direction.</p><a href="#gallery">VIEW</a></div>
+<div class="art-card"><i class="fa-solid fa-layer-group"></i><h3>BRAND ART</h3><p>Complete brand look, colors, social media templates and visual identity.</p><a href="#gallery">VIEW</a></div>
+</div>
+</section>
+
+<section class="section" id="gallery">
+<div class="section-title">
+<span class="tag">ART GALLERY</span>
+<h2>ADD YOUR ART IMAGES HERE</h2>
+</div>
+
+<div class="gallery">
+<div class="gallery-box"><div class="placeholder">✏️</div><h3>Pencil Portrait</h3><p>Replace this box with your pencil art image later.</p></div>
+<div class="gallery-box"><div class="placeholder">🎬</div><h3>Character Concept</h3><p>Add your animation character sketch or AI concept image.</p></div>
+<div class="gallery-box"><div class="placeholder">🖼️</div><h3>Poster Design</h3><p>Add your movie poster, event poster or thumbnail design.</p></div>
+<div class="gallery-box"><div class="placeholder">👑</div><h3>Logo Concept</h3><p>Add your logo design and brand symbol artworks here.</p></div>
+<div class="gallery-box"><div class="placeholder">🌌</div><h3>Digital Artwork</h3><p>Add futuristic digital designs and creative visual concepts.</p></div>
+<div class="gallery-box"><div class="placeholder">🤖</div><h3>AI Artwork</h3><p>Add AI-generated artwork, creative references and visual ideas.</p></div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<span class="tag">ART COMMISSION</span>
+<h2>LET’S CREATE ART</h2>
+<p>For pencil portraits, poster design, logo art, animation character art and digital creative design works.</p>
+
+<div class="contact-row">
+<a class="contact-box" href="tel:+919360436090"><i class="fa-solid fa-phone"></i><div><b>Phone</b><br>+91 93604 36090</div></a>
+<a class="contact-box" href="mailto:rohitsharmachanger45@gmail.com"><i class="fa-regular fa-envelope"></i><div><b>Email</b><br>rohitsharmachanger45@gmail.com</div></a>
+<a class="contact-box" href="https://averixcreativestudio.in" target="_blank"><i class="fa-solid fa-globe"></i><div><b>Website</b><br>averixcreativestudio.in</div></a>
+</div>
+</section>
+
+<div class="footer">Developed by <b>Santhosh Kumar G</b> • <b>Art Work & Creative Design</b></div>
+
+</div>
+
+<script>
+const glow=document.getElementById("cursorGlow");
+document.addEventListener("mousemove",e=>{
+glow.style.left=e.clientX+"px";
+glow.style.top=e.clientY+"px";
+});
+document.querySelectorAll(".card,.art-card,.gallery-box,.main-card").forEach(card=>{
+card.addEventListener("mousemove",e=>{
+const r=card.getBoundingClientRect();
+const x=e.clientX-r.left;
+const y=e.clientY-r.top;
+const rx=((y/r.height)-.5)*8;
+const ry=((x/r.width)-.5)*-8;
+card.style.transform=`perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
+});
+card.addEventListener("mouseleave",()=>{
+card.style.transform="";
+});
+});
+</script>
+
+</body>
+</html>

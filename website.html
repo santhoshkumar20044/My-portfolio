@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Website Development | Santhosh Kumar G</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--cyan:#00f7ff;--blue:#0066ff;--pink:#ff2bd6;--purple:#8a2bff;--yellow:#ffd447;--green:#00ff9c}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,sans-serif;color:#fff;min-height:100vh;overflow-x:hidden;background:#01020d}
+body:before{content:"";position:fixed;inset:0;z-index:-5;background:radial-gradient(circle at 10% 15%,rgba(0,247,255,.28),transparent 18%),radial-gradient(circle at 85% 20%,rgba(255,43,214,.25),transparent 19%),radial-gradient(circle at 50% 90%,rgba(138,43,255,.32),transparent 22%),linear-gradient(135deg,#020414 0%,#050019 45%,#12002a 100%)}
+body:after{content:"";position:fixed;inset:0;z-index:-4;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(var(--cyan) 1px,transparent 1px),radial-gradient(var(--pink) 1px,transparent 1px);background-size:80px 80px,130px 130px,190px 190px;background-position:0 0,40px 70px,100px 30px;opacity:.45;animation:stars 25s linear infinite}
+@keyframes stars{to{background-position:400px 300px,240px 470px,500px 330px}}
+.aurora{position:fixed;inset:-20%;z-index:-3;background:conic-gradient(from 180deg at 50% 50%,transparent,#00f7ff22,#ff2bd633,#8a2bff33,transparent);filter:blur(65px);animation:aurora 14s ease-in-out infinite alternate}
+@keyframes aurora{to{transform:rotate(18deg) scale(1.12)}}
+.planet{position:fixed;border-radius:50%;z-index:-2;background:radial-gradient(circle at 30% 28%,#8dffff,#6539ff 42%,#210050 78%);box-shadow:0 0 35px #6a2bff,inset -18px -18px 30px #0008;animation:float 7s ease-in-out infinite}
+.p1{width:70px;height:70px;left:-22px;bottom:120px}.p2{width:105px;height:105px;right:-35px;bottom:240px}.p3{width:45px;height:45px;right:65px;top:105px}
+@keyframes float{50%{transform:translateY(-28px) rotate(12deg)}}
+.page{width:min(1220px,94%);margin:auto;padding:35px 0 22px}
+.navbar{width:min(980px,94%);height:72px;margin:0 auto 32px;border-radius:34px;display:flex;align-items:center;justify-content:space-between;padding:0 25px;background:linear-gradient(180deg,rgba(10,18,60,.78),rgba(2,4,22,.75));border:1px solid rgba(0,247,255,.7);box-shadow:0 0 18px #00f7ff66,0 0 38px #8a2bff88,inset 0 0 25px #005eff44;backdrop-filter:blur(18px)}
+.logo{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:30px;background:radial-gradient(circle,#161cff,#ff2bd6);box-shadow:0 0 25px var(--pink)}
+.navlinks{display:flex;gap:34px;align-items:center}
+.navlinks a{color:#fff;text-decoration:none;font-weight:900;font-size:14px;text-shadow:0 0 10px #fff;position:relative}
+.navlinks a:after{content:"";position:absolute;left:50%;right:50%;bottom:-18px;height:4px;background:linear-gradient(90deg,var(--cyan),var(--pink));border-radius:20px;box-shadow:0 0 15px var(--cyan);transition:.35s}
+.navlinks a:hover:after,.navlinks a.active:after{left:-20px;right:-20px}
+.menu{width:44px;height:44px;border-radius:50%;border:1px solid var(--cyan);display:grid;place-items:center;color:var(--cyan);font-size:22px;box-shadow:0 0 18px var(--cyan)}
+.hero{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:20px;align-items:stretch}
+.card,.main-card,.tech-card,.service,.process,.contact{background:linear-gradient(145deg,rgba(8,16,55,.8),rgba(2,5,24,.68));border:1.5px solid rgba(255,43,214,.75);box-shadow:0 0 18px rgba(0,247,255,.28),inset 0 0 28px rgba(138,43,255,.18);backdrop-filter:blur(18px);position:relative;overflow:hidden;transition:.45s ease;transform-style:preserve-3d}
+.card{border-radius:22px;padding:28px 26px;min-height:255px}
+.main-card{border-radius:24px;padding:38px 30px;text-align:center;min-height:532px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.card:hover,.tech-card:hover,.service:hover,.process:hover,.main-card:hover{transform:perspective(1000px) rotateX(4deg) rotateY(-4deg) translateY(-8px);box-shadow:0 0 30px #00f7ff88,0 0 55px #ff2bd655,inset 0 0 35px #8a2bff44}
+.card:before,.main-card:before,.tech-card:before,.service:before,.process:before,.contact:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 20%,rgba(255,43,214,.2),transparent 36%),radial-gradient(circle at 10% 90%,rgba(0,247,255,.18),transparent 36%);pointer-events:none}
+.tag{display:inline-block;color:#8fffff;font-size:12px;font-weight:900;letter-spacing:1px;border:1px solid rgba(0,247,255,.55);padding:8px 16px;border-radius:999px;background:rgba(0,247,255,.08);box-shadow:0 0 12px #00f7ff55;margin-bottom:14px}
+h1{font-family:Orbitron,sans-serif;font-size:50px;line-height:1.05;font-weight:900;letter-spacing:2px;background:linear-gradient(90deg,#fff,var(--cyan),var(--pink),var(--yellow));-webkit-background-clip:text;color:transparent;text-shadow:0 0 35px #00f7ff55}
+.main-card h2{font-size:18px;color:var(--yellow);margin:12px 0;text-shadow:0 0 12px #ffd44788}
+.main-card p,.card p,.tech-card p,.service p,.process p,.contact p{color:#e7eaff;font-size:14px;line-height:1.65;position:relative;z-index:2}
+.card h2{font-size:19px;color:#55f7ff;margin-bottom:18px;font-weight:900;position:relative;z-index:2;text-shadow:0 0 12px #00f7ff88}
+.card h2 span{font-size:28px;margin-right:10px}
+.icon-big{font-size:105px;filter:drop-shadow(0 0 22px var(--pink));animation:floatIcon 4s ease-in-out infinite;margin-top:10px}
+@keyframes floatIcon{50%{transform:translateY(-12px) rotate(6deg)}}
+.web-orb{width:230px;height:230px;border-radius:50%;padding:8px;margin:0 auto 18px;background:conic-gradient(var(--cyan),#345bff,var(--pink),var(--yellow),var(--cyan));box-shadow:0 0 28px var(--cyan),0 0 32px var(--pink);position:relative;display:grid;place-items:center;font-size:95px}
+.web-orb:before{content:"";position:absolute;inset:-25px;border-radius:50%;border:2px solid rgba(0,247,255,.45);border-top-color:var(--pink);border-bottom-color:var(--yellow);animation:orbit 12s linear infinite}
+.web-orb span{position:relative;z-index:2;filter:drop-shadow(0 0 20px var(--yellow))}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.btns{display:flex;gap:18px;margin-top:25px;flex-wrap:wrap;justify-content:center}
+.btn{color:#fff;text-decoration:none;font-weight:900;padding:13px 28px;border-radius:13px;border:1px solid var(--pink);background:linear-gradient(120deg,var(--cyan),var(--blue),var(--pink),var(--yellow));background-size:300%;box-shadow:0 0 18px var(--cyan),0 0 24px #ff2bd666;animation:btnGlow 5s linear infinite;transition:.3s}
+.btn:hover{transform:translateY(-4px) scale(1.04)}
+.btn.outline{background:rgba(2,8,35,.6);box-shadow:0 0 15px var(--pink)}
+@keyframes btnGlow{to{background-position:300%}}
+.section{margin-top:22px}
+.section-title{text-align:center;margin-bottom:18px}
+.section-title h2{font-family:Orbitron,sans-serif;font-size:34px;color:var(--cyan);text-shadow:0 0 18px #00f7ff88}
+.tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tech-card,.service{border-radius:18px;padding:22px 16px;text-align:center;min-height:200px;border-color:#00d9ff}
+.tech-card:nth-child(even),.service:nth-child(even){border-color:#ff2bd6}
+.tech-card i,.service i{font-size:45px;color:var(--cyan);filter:drop-shadow(0 0 12px var(--cyan));margin-bottom:14px}
+.tech-card:nth-child(2) i,.tech-card:nth-child(6) i,.service:nth-child(2) i,.service:nth-child(6) i{color:var(--yellow)}
+.tech-card:nth-child(5) i,.tech-card:nth-child(8) i,.service:nth-child(5) i,.service:nth-child(8) i{color:var(--pink)}
+.tech-card h3,.service h3{font-size:16px;margin-bottom:10px;color:#55eaff;font-weight:900}
+.process-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.process{border-radius:17px;padding:18px 12px;text-align:center;min-height:140px}
+.process .num{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;margin:0 auto 12px;background:linear-gradient(135deg,var(--cyan),var(--pink));box-shadow:0 0 15px var(--cyan);font-weight:900}
+.process h3{font-size:13px;color:var(--yellow)}
+.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.package{border-radius:22px;padding:25px;background:linear-gradient(145deg,rgba(8,16,55,.85),rgba(2,5,24,.72));border:1.5px solid rgba(0,247,255,.65);box-shadow:0 0 24px rgba(0,247,255,.25),inset 0 0 28px rgba(138,43,255,.18)}
+.package h3{color:var(--yellow);font-size:22px;margin-bottom:10px}
+.package ul{padding-left:18px;color:#e7eaff;font-size:13px;line-height:1.9}
+.contact{margin-top:22px;padding:24px;border-radius:22px;text-align:center;border-color:#ff28c9;box-shadow:0 0 30px rgba(255,0,204,.52),inset 0 0 28px rgba(0,247,255,.14)}
+.contact h2{color:#4df2ff;font-size:24px;font-weight:900;text-shadow:0 0 13px var(--cyan)}
+.contact-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.contact-box{border:1px solid rgba(0,185,255,.75);border-radius:14px;min-height:76px;display:flex;align-items:center;gap:12px;padding:13px;background:rgba(4,18,55,.75);text-align:left;box-shadow:inset 0 0 18px rgba(0,174,255,.14),0 0 12px #00f7ff22;text-decoration:none;color:#fff}
+.contact-box i{font-size:28px;color:var(--cyan)}
+.footer{text-align:center;padding:18px 0 0;color:#ddd;font-size:13px}
+.footer b{color:#1ebaff;font-size:18px;text-shadow:0 0 10px #00f7ff88}
+.cursor-glow{position:fixed;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(0,247,255,.13),transparent 65%);pointer-events:none;z-index:-1;transform:translate(-50%,-50%)}
+@media(max-width:1050px){.hero{grid-template-columns:1fr}.tech-grid{grid-template-columns:repeat(2,1fr)}.process-grid{grid-template-columns:repeat(3,1fr)}.packages{grid-template-columns:1fr}.contact-row{grid-template-columns:1fr 1fr}.navlinks{gap:20px}}
+@media(max-width:600px){.page{width:94%;padding-top:20px}.navbar{height:auto;padding:16px;gap:15px}.navlinks{display:none}h1{font-size:34px}.main-card{min-height:auto}.web-orb{width:190px;height:190px}.tech-grid,.process-grid,.contact-row{grid-template-columns:1fr}.card{min-height:auto}.section-title h2{font-size:25px}}
+</style>
+</head>
+<body>
+
+<div class="aurora"></div>
+<div class="planet p1"></div>
+<div class="planet p2"></div>
+<div class="planet p3"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<div class="page">
+
+<nav class="navbar">
+<div class="logo">🚀</div>
+<div class="navlinks">
+<a href="home.html">HOME</a>
+<a href="work.html">WORKS</a>
+<a href="studio.html">STUDIO</a>
+<a href="art.html">ART WORK</a>
+<a class="active" href="website.html">WEBSITE</a>
+<a href="contact.html">CONTACT</a>
+</div>
+<div class="menu"><i class="fa-solid fa-bars"></i></div>
+</nav>
+
+<section class="hero">
+
+<div class="card">
+<span class="tag">FULL STACK</span>
+<h2><span>💻</span>AI + WEB DEVELOPER</h2>
+<p>I create AI websites, portfolio websites, business websites, Streamlit apps, dashboards and full stack web applications.</p>
+<div class="icon-big">🌐</div>
+</div>
+
+<div class="main-card">
+<div class="web-orb"><span>💻</span></div>
+<span class="tag">WEBSITE DEVELOPMENT</span>
+<h1>WEBSITE CREATOR</h1>
+<h2>AI Websites • Full Stack Apps • Hosting • SEO • Domain Setup</h2>
+<p>I provide complete website development from frontend design to backend, database, hosting, domain setup and SEO first-search optimization.</p>
+<div class="btns">
+<a class="btn" href="#services">VIEW SERVICES</a>
+<a class="btn outline" href="#contact">START WEBSITE</a>
+</div>
+</div>
+
+<div class="card">
+<span class="tag">COMPLETE SETUP</span>
+<h2><span>🚀</span>HOSTING + DOMAIN + SEO</h2>
+<p>Cloudflare hosting, Firebase hosting, .com/.in domain setup, DNS connection and Google SEO indexing support.</p>
+<div class="icon-big">⚡</div>
+</div>
+
+</section>
+
+<section class="section" id="services">
+<div class="section-title">
+<span class="tag">DEVELOPMENT SERVICES</span>
+<h2>WHAT I BUILD</h2>
+</div>
+
+<div class="tech-grid">
+<div class="service"><i class="fa-solid fa-wand-magic-sparkles"></i><h3>AI WEBSITE</h3><p>Modern AI-style websites with premium futuristic UI and responsive design.</p></div>
+<div class="service"><i class="fa-brands fa-react"></i><h3>REACT WEBSITE</h3><p>React portfolio, business pages, dashboards and dynamic frontend apps.</p></div>
+<div class="service"><i class="fa-solid fa-code"></i><h3>HTML CSS JS</h3><p>Static websites, landing pages, portfolio pages and client websites.</p></div>
+<div class="service"><i class="fa-solid fa-chart-line"></i><h3>STREAMLIT APP</h3><p>AI dashboards, ML projects, data apps and Python web tools.</p></div>
+<div class="service"><i class="fa-brands fa-python"></i><h3>FLASK BACKEND</h3><p>Python Flask backend, login systems, APIs and web app logic.</p></div>
+<div class="service"><i class="fa-solid fa-database"></i><h3>DATABASE SETUP</h3><p>SQLite, SQL, Firebase Storage, Local Storage and cloud database setup.</p></div>
+<div class="service"><i class="fa-solid fa-cloud"></i><h3>HOSTING</h3><p>Cloudflare hosting, Firebase hosting and deployment support.</p></div>
+<div class="service"><i class="fa-solid fa-magnifying-glass-chart"></i><h3>SEO SUPPORT</h3><p>Google Search Console, indexing, meta tags and first-search optimization setup.</p></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-title">
+<span class="tag">TECH STACK</span>
+<h2>TOOLS & TECHNOLOGIES</h2>
+</div>
+
+<div class="tech-grid">
+<div class="tech-card"><i class="fa-brands fa-react"></i><h3>React</h3><p>Frontend single page application and component-based UI.</p></div>
+<div class="tech-card"><i class="fa-brands fa-html5"></i><h3>HTML</h3><p>Clean structure for professional websites and landing pages.</p></div>
+<div class="tech-card"><i class="fa-brands fa-css3-alt"></i><h3>CSS</h3><p>Responsive design, animations, neon UI and 3D effects.</p></div>
+<div class="tech-card"><i class="fa-brands fa-js"></i><h3>JavaScript</h3><p>Interactive website logic, forms and dynamic UI features.</p></div>
+<div class="tech-card"><i class="fa-brands fa-python"></i><h3>Python</h3><p>Flask backend, pandas data processing and AI tools.</p></div>
+<div class="tech-card"><i class="fa-solid fa-fire"></i><h3>Firebase</h3><p>Authentication, database, storage and Firebase hosting.</p></div>
+<div class="tech-card"><i class="fa-solid fa-bolt"></i><h3>Supabase</h3><p>Cloud database, authentication and backend services.</p></div>
+<div class="tech-card"><i class="fa-solid fa-shield-halved"></i><h3>Cloudflare</h3><p>Hosting, DNS, SSL, domain connection and website protection.</p></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-title">
+<span class="tag">DATABASE & HOSTING</span>
+<h2>BACKEND, DB, DOMAIN & SEO</h2>
+</div>
+
+<div class="packages">
+<div class="package">
+<h3>Backend</h3>
+<ul>
+<li>Flask backend</li>
+<li>Python APIs</li>
+<li>Pandas data handling</li>
+<li>JavaScript logic</li>
+<li>Login / signup system</li>
+</ul>
+</div>
+
+<div class="package">
+<h3>Database</h3>
+<ul>
+<li>SQLite</li>
+<li>SQL database</li>
+<li>Local Storage</li>
+<li>Firebase Storage</li>
+<li>Supabase DB</li>
+</ul>
+</div>
+
+<div class="package">
+<h3>Launch Setup</h3>
+<ul>
+<li>Cloudflare hosting</li>
+<li>Firebase hosting</li>
+<li>.com domain setup</li>
+<li>.in domain setup</li>
+<li>SEO first-search setup</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-title">
+<span class="tag">WORK PROCESS</span>
+<h2>FROM IDEA TO LIVE WEBSITE</h2>
+</div>
+
+<div class="process-grid">
+<div class="process"><div class="num">01</div><h3>Requirement</h3><p>Client idea, pages and features.</p></div>
+<div class="process"><div class="num">02</div><h3>Design</h3><p>Modern UI, colors and layout.</p></div>
+<div class="process"><div class="num">03</div><h3>Frontend</h3><p>React / HTML / CSS / JS.</p></div>
+<div class="process"><div class="num">04</div><h3>Backend</h3><p>Flask, Python and database.</p></div>
+<div class="process"><div class="num">05</div><h3>Hosting</h3><p>Cloudflare / Firebase deploy.</p></div>
+<div class="process"><div class="num">06</div><h3>SEO</h3><p>Google indexing and search setup.</p></div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<span class="tag">WEBSITE ORDER</span>
+<h2>START YOUR WEBSITE PROJECT</h2>
+<p>For AI website, full stack website, business page, portfolio, backend, database, hosting, domain and SEO setup.</p>
+
+<div class="contact-row">
+<a class="contact-box" href="https://wa.me/919360436090?text=Hi%20Santhosh%2C%20I%20want%20a%20website%20for%20my%20business" target="_blank"><i class="fa-brands fa-whatsapp"></i><div><b>WhatsApp</b><br>+91 93604 36090</div></a>
+<a class="contact-box" href="mailto:santhoshwebworker@gmail.com"><i class="fa-regular fa-envelope"></i><div><b>Email</b><br>santhoshwebworker@gmail.com</div></a>
+<a class="contact-box" href="https://averixcreativestudio.in" target="_blank"><i class="fa-solid fa-globe"></i><div><b>Company Website</b><br>averixcreativestudio.in</div></a>
+</div>
+</section>
+
+<div class="footer">Developed by <b>Santhosh Kumar G</b> • <b>Full Stack Developer & AI Website Creator</b></div>
+
+</div>
+
+<script>
+const glow=document.getElementById("cursorGlow");
+document.addEventListener("mousemove",e=>{
+glow.style.left=e.clientX+"px";
+glow.style.top=e.clientY+"px";
+});
+document.querySelectorAll(".card,.tech-card,.service,.process,.main-card,.package").forEach(card=>{
+card.addEventListener("mousemove",e=>{
+const r=card.getBoundingClientRect();
+const x=e.clientX-r.left;
+const y=e.clientY-r.top;
+const rx=((y/r.height)-.5)*8;
+const ry=((x/r.width)-.5)*-8;
+card.style.transform=`perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
+});
+card.addEventListener("mouseleave",()=>{card.style.transform=""});
+});
+</script>
+
+</body>
+</html>

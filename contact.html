@@ -20,13 +20,13 @@ body:after{content:"";position:fixed;inset:0;z-index:-4;background-image:radial-
 .p1{width:70px;height:70px;left:-22px;bottom:120px}.p2{width:105px;height:105px;right:-35px;bottom:240px}.p3{width:45px;height:45px;right:65px;top:105px}
 @keyframes float{50%{transform:translateY(-28px) rotate(12deg)}}
 .page{width:min(1220px,94%);margin:auto;padding:35px 0 22px}
-.navbar{width:min(950px,94%);height:72px;margin:0 auto 32px;border-radius:34px;display:flex;align-items:center;justify-content:space-between;padding:0 25px;background:linear-gradient(180deg,rgba(10,18,60,.78),rgba(2,4,22,.75));border:1px solid rgba(0,247,255,.7);box-shadow:0 0 18px #00f7ff66,0 0 38px #8a2bff88,inset 0 0 25px #005eff44;backdrop-filter:blur(18px);position:relative;overflow:hidden}
+.navbar{width:min(950px,94%);height:72px;margin:0 auto 32px;border-radius:34px;display:flex;align-items:center;justify-content:space-between;padding:0 25px;background:linear-gradient(180deg,rgba(10,18,60,.78),rgba(2,4,22,.75));border:1px solid rgba(0,247,255,.7);box-shadow:0 0 18px #00f7ff66,0 0 38px #8a2bff88,inset 0 0 25px #005eff44;backdrop-filter:blur(18px);position:relative;overflow:hidden;z-index:9999}
 .logo{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:30px;background:radial-gradient(circle,#161cff,#ff2bd6);box-shadow:0 0 25px var(--pink)}
 .navlinks{display:flex;gap:45px;align-items:center}
 .navlinks a{color:#fff;text-decoration:none;font-weight:900;font-size:15px;text-shadow:0 0 10px #fff;position:relative}
 .navlinks a:after{content:"";position:absolute;left:50%;right:50%;bottom:-18px;height:4px;background:linear-gradient(90deg,var(--cyan),var(--pink));border-radius:20px;box-shadow:0 0 15px var(--cyan);transition:.35s}
 .navlinks a:hover:after,.navlinks a.active:after{left:-25px;right:-25px}
-.menu{width:44px;height:44px;border-radius:50%;border:1px solid var(--cyan);display:grid;place-items:center;color:var(--cyan);font-size:22px;box-shadow:0 0 18px var(--cyan)}
+.menu{width:44px;height:44px;border-radius:50%;border:1px solid var(--cyan);display:grid;place-items:center;color:var(--cyan);font-size:22px;box-shadow:0 0 18px var(--cyan),inset 0 0 12px #00f7ff33;background:rgba(0,247,255,.08);cursor:pointer}
 .hero{display:grid;grid-template-columns:1fr 1.2fr;gap:20px}
 .card,.form-card,.social-card,.contact-box{background:linear-gradient(145deg,rgba(8,16,55,.8),rgba(2,5,24,.68));border:1.5px solid rgba(255,43,214,.75);box-shadow:0 0 18px rgba(0,247,255,.28),inset 0 0 28px rgba(138,43,255,.18);backdrop-filter:blur(18px);position:relative;overflow:hidden;transition:.45s ease;transform-style:preserve-3d}
 .card:hover,.form-card:hover,.social-card:hover,.contact-box:hover{transform:translateY(-8px);box-shadow:0 0 30px #00f7ff88,0 0 55px #ff2bd655}
@@ -65,8 +65,56 @@ textarea{min-height:120px;resize:vertical}
 .footer{text-align:center;padding:18px 0 0;color:#ddd;font-size:13px}
 .footer b{color:#1ebaff;font-size:18px;text-shadow:0 0 10px #00f7ff88}
 .cursor-glow{position:fixed;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(0,247,255,.13),transparent 65%);pointer-events:none;z-index:-1;transform:translate(-50%,-50%)}
-@media(max-width:1050px){.hero{grid-template-columns:1fr}.social-grid{grid-template-columns:repeat(2,1fr)}.navlinks{gap:20px}}
-@media(max-width:600px){.page{width:94%;padding-top:20px}.navbar{height:auto;padding:16px}.navlinks{display:none}h1{font-size:36px}.contact-orb{width:180px;height:180px}.quick-grid,.social-grid{grid-template-columns:1fr}}
+
+@media(max-width:1050px){
+.hero{grid-template-columns:1fr}
+.social-grid{grid-template-columns:repeat(2,1fr)}
+.navlinks{gap:20px}
+}
+
+@media(max-width:768px){
+.page{width:100%;padding:12px 10px 18px}
+.navbar{width:100%;min-height:70px;height:auto;margin:0 auto 16px;border-radius:22px;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;overflow:visible;position:relative;z-index:9999}
+.logo{width:45px;height:45px;font-size:25px;margin:0}
+.menu{display:grid;width:45px;height:45px;border-radius:50%;background:rgba(0,247,255,.08);border:1px solid var(--cyan);cursor:pointer}
+.navlinks{position:absolute;top:68px;right:10px;width:220px;display:none;grid-template-columns:1fr;gap:9px;padding:12px;border-radius:18px;background:rgba(3,8,35,.98);border:1px solid rgba(0,247,255,.75);box-shadow:0 0 25px #00f7ff99,0 0 35px #ff2bd666;backdrop-filter:blur(18px);z-index:10000}
+.navlinks.show{display:grid}
+.navlinks a{font-size:12px;padding:12px 10px;border-radius:13px;background:rgba(255,255,255,.08);border:1px solid rgba(0,247,255,.25);text-align:center;white-space:nowrap}
+.navlinks a:after{display:none}
+.navlinks a.active{background:linear-gradient(120deg,rgba(0,247,255,.28),rgba(255,43,214,.22));box-shadow:0 0 13px rgba(0,247,255,.35)}
+.hero{display:flex;flex-direction:column}
+.card,.form-card{padding:24px 14px;border-radius:22px;position:relative;z-index:1}
+.contact-orb{width:175px;height:175px;font-size:70px;margin-bottom:14px}
+.contact-orb:before{inset:-16px}
+h1{font-size:34px}
+.form-card h2,.social-card h2{font-size:20px}
+.card p,.form-card p,.social-card p,.company p{font-size:12.5px}
+.tag{font-size:10.5px;padding:7px 12px}
+.quick-grid{grid-template-columns:1fr;gap:10px}
+.contact-box{min-height:66px;padding:12px;font-size:12px}
+.contact-box i{font-size:28px}
+input,select,textarea{padding:12px;font-size:12px}
+.btn{padding:12px 10px;font-size:12px}
+.section{margin-top:16px}
+.section-title h2{font-size:22px}
+.social-grid{grid-template-columns:1fr 1fr;gap:10px}
+.social-card{min-height:150px;padding:16px 8px;border-radius:16px}
+.social-card i{font-size:32px;margin-bottom:10px}
+.social-card h3{font-size:12px}
+.social-card p{font-size:10.5px;line-height:1.4}
+.company{padding:20px 10px;border-radius:20px}
+.company h2{font-size:22px}
+.company a{width:100%;padding:12px 10px;font-size:11px}
+.footer{padding:15px 5px 0;font-size:11px}
+.cursor-glow{display:none}
+}
+
+@media(max-width:380px){
+.navlinks{width:200px}
+.social-grid{grid-template-columns:1fr}
+h1{font-size:30px}
+.contact-orb{width:155px;height:155px}
+}
 </style>
 </head>
 <body>
@@ -81,14 +129,14 @@ textarea{min-height:120px;resize:vertical}
 
 <nav class="navbar">
 <div class="logo">🚀</div>
-<div class="navlinks">
+<div class="navlinks" id="navLinks">
 <a href="index.html">HOME</a>
 <a href="work.html">WORKS</a>
 <a href="studio.html">STUDIO</a>
 <a href="art.html">ART WORK</a>
 <a class="active" href="contact.html">CONTACT</a>
 </div>
-<div class="menu"><i class="fa-solid fa-bars"></i></div>
+<button class="menu" id="menuBtn" type="button"><i class="fa-solid fa-ellipsis"></i></button>
 </nav>
 
 <section class="hero">
@@ -100,21 +148,10 @@ textarea{min-height:120px;resize:vertical}
 <p>For company work registration, AI websites, portfolio design, 3D animation, poster design, logo design, pencil art and creative studio projects.</p>
 
 <div class="quick-grid">
-<a class="contact-box" href="https://wa.me/919360436090?text=Hi%20Santhosh%2C%20I%20want%20to%20start%20a%20project" target="_blank">
-<i class="fa-brands fa-whatsapp"></i><div><b>WhatsApp</b><br><span>Message Now</span></div>
-</a>
-
-<a class="contact-box" href="tel:+919360436090">
-<i class="fa-solid fa-phone"></i><div><b>Phone</b><br><span>+91 93604 36090</span></div>
-</a>
-
-<a class="contact-box" href="mailto:santhoshwebworker@gmail.com">
-<i class="fa-regular fa-envelope"></i><div><b>Email</b><br><span>santhoshwebworker@gmail.com</span></div>
-</a>
-
-<a class="contact-box" href="https://averixcreativestudio.in" target="_blank">
-<i class="fa-solid fa-globe"></i><div><b>Company Website</b><br><span>averixcreativestudio.in</span></div>
-</a>
+<a class="contact-box" href="https://wa.me/919360436090?text=Hi%20Santhosh%2C%20I%20want%20to%20start%20a%20project" target="_blank"><i class="fa-brands fa-whatsapp"></i><div><b>WhatsApp</b><br><span>Message Now</span></div></a>
+<a class="contact-box" href="tel:+919360436090"><i class="fa-solid fa-phone"></i><div><b>Phone</b><br><span>+91 93604 36090</span></div></a>
+<a class="contact-box" href="mailto:santhoshwebworker@gmail.com"><i class="fa-regular fa-envelope"></i><div><b>Email</b><br><span>santhoshwebworker@gmail.com</span></div></a>
+<a class="contact-box" href="https://averixcreativestudio.in" target="_blank"><i class="fa-solid fa-globe"></i><div><b>Company Website</b><br><span>averixcreativestudio.in</span></div></a>
 </div>
 </div>
 
@@ -153,53 +190,14 @@ textarea{min-height:120px;resize:vertical}
 </div>
 
 <div class="social-grid">
-<a class="social-card whatsapp" href="https://wa.me/919360436090" target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-<h3>WhatsApp</h3>
-<p>Direct message for project work and company registration.</p>
-</a>
-
-<a class="social-card instagram" href="https://www.instagram.com/silent_animeboy?igsh=MmFkMTd4dnpzN3Jy" target="_blank">
-<i class="fa-brands fa-instagram"></i>
-<h3>Instagram</h3>
-<p>Add your Instagram profile link here.</p>
-</a>
-
-<a class="social-card linkedin" href="https://www.linkedin.com/in/santhosh-kumar-founder-a36814376?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
-<i class="fa-brands fa-linkedin"></i>
-<h3>LinkedIn</h3>
-<p>Add your LinkedIn professional profile link here.</p>
-</a>
-
-<a class="social-card youtube" href="https://www.youtube.com/@Averixcreativestudio" target="_blank">
-<i class="fa-brands fa-youtube"></i>
-<h3>YouTube</h3>
-<p>Add your YouTube channel link here.</p>
-</a>
-
-<a class="social-card" href="https://github.com/santhoshkumar20044" target="_blank">
-<i class="fa-brands fa-github"></i>
-<h3>GitHub</h3>
-<p>Add your GitHub projects and portfolio code link here.</p>
-</a>
-
-<a class="social-card" href="https://www.freelancer.in/u/gsanthoshs?sb=t" target="_blank">
-<i class="fa-solid fa-briefcase"></i>
-<h3>Freelancer</h3>
-<p>Add your freelancer profile link for client work.</p>
-</a>
-
-<a class="social-card" href="https://averixcreativestudio.in" target="_blank">
-<i class="fa-solid fa-globe"></i>
-<h3>Company Website</h3>
-<p>Averix Creative Studio official website.</p>
-</a>
-
-<a class="social-card" href="mailto:santhoshwebworker@gmail.com">
-<i class="fa-regular fa-envelope"></i>
-<h3>Email</h3>
-<p>Send official project enquiry by email.</p>
-</a>
+<a class="social-card whatsapp" href="https://wa.me/919360436090" target="_blank"><i class="fa-brands fa-whatsapp"></i><h3>WhatsApp</h3><p>Direct message for project work and company registration.</p></a>
+<a class="social-card instagram" href="https://www.instagram.com/silent_animeboy?igsh=MmFkMTd4dnpzN3Jy" target="_blank"><i class="fa-brands fa-instagram"></i><h3>Instagram</h3><p>Instagram creative profile and updates.</p></a>
+<a class="social-card linkedin" href="https://www.linkedin.com/in/santhosh-kumar-founder-a36814376?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank"><i class="fa-brands fa-linkedin"></i><h3>LinkedIn</h3><p>Professional profile and company work.</p></a>
+<a class="social-card youtube" href="https://www.youtube.com/@Averixcreativestudio" target="_blank"><i class="fa-brands fa-youtube"></i><h3>YouTube</h3><p>Averix Creative Studio channel.</p></a>
+<a class="social-card" href="https://github.com/santhoshkumar20044" target="_blank"><i class="fa-brands fa-github"></i><h3>GitHub</h3><p>Projects and portfolio code.</p></a>
+<a class="social-card" href="https://www.freelancer.in/u/gsanthoshs?sb=t" target="_blank"><i class="fa-solid fa-briefcase"></i><h3>Freelancer</h3><p>Freelancer profile for client work.</p></a>
+<a class="social-card" href="https://averixcreativestudio.in" target="_blank"><i class="fa-solid fa-globe"></i><h3>Company Website</h3><p>Averix Creative Studio official website.</p></a>
+<a class="social-card" href="mailto:santhoshwebworker@gmail.com"><i class="fa-regular fa-envelope"></i><h3>Email</h3><p>Send official project enquiry by email.</p></a>
 </div>
 </section>
 
@@ -217,9 +215,22 @@ textarea{min-height:120px;resize:vertical}
 
 <script>
 const glow=document.getElementById("cursorGlow");
-document.addEventListener("mousemove",e=>{
-glow.style.left=e.clientX+"px";
-glow.style.top=e.clientY+"px";
+document.addEventListener("mousemove",e=>{if(glow){glow.style.left=e.clientX+"px";glow.style.top=e.clientY+"px";}});
+
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
+
+menuBtn.addEventListener("click",e=>{
+e.stopPropagation();
+navLinks.classList.toggle("show");
+});
+
+document.addEventListener("click",e=>{
+if(!navLinks.contains(e.target)&&!menuBtn.contains(e.target)){navLinks.classList.remove("show");}
+});
+
+document.querySelectorAll(".navlinks a").forEach(link=>{
+link.addEventListener("click",()=>navLinks.classList.remove("show"));
 });
 
 function sendWhatsApp(e){
@@ -229,7 +240,6 @@ let phone=document.getElementById("phone").value;
 let email=document.getElementById("email").value;
 let service=document.getElementById("service").value;
 let message=document.getElementById("message").value;
-
 let text=`Hi Santhosh, I want to register a company work.%0A%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email}%0AService: ${service}%0AProject Details: ${message}`;
 window.open(`https://wa.me/919360436090?text=${text}`,"_blank");
 }
